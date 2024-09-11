@@ -1,0 +1,58 @@
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;    
+}
+body{
+    font-size:1.6rem ;
+    font-family: 'Courier New', Courier, monospace ;
+    background-color:#0283A9;
+
+}
+
+/* Estas propiedades defiene el tamaño de la fuente en toda la pagina y
+agregar margenes tipo caja */
+
+header{
+    padding: 3rem 0;
+}
+header h1{
+ text-align: center;
+ color: white;
+ font-size: 6rem;
+}
+
+header p{
+    color: white;
+    text-align: center;
+    font-size: 3.2rem;
+}
+header p a {
+    text-decoration: none;
+    color: black;
+}
+.DOM{
+    max-width: 120rem;
+    margin: 0 auto;
+
+}
+.DOM h2{
+    color: white;
+    text-align: center;
+}
+.DOM nav a{
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    margin-right: 10px;
+}
+.DOM p{
+    color: #0283A9;
+    font-size: 20px;
+}
+.DOM #formulario {
+    max-width: 500px;
+    margin: 0 auto;
+}
+.DOM #formulario input{
+    display: block;
+}
