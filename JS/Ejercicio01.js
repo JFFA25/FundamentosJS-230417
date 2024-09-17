@@ -36,7 +36,7 @@
  // c) LET
  let miFechaNacimiento = "2005-08-11";
  let miColorFavorito;
-
+let hola;
  console.warn("---Declaracion de Variables Locales usando : LET")
 console.log("Genial , Ya te voy conociendo mejor , ahora se que tu naciste el",miFechaNacimiento, "Y tu color favorito es mmmmm dejame pensar .....");
  miColorFavorito = "Azul";
