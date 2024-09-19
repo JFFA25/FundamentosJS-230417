@@ -175,3 +175,28 @@ estatusRelacioneSentimental = null
 console.log(`El usuario: ${nombreUsuario} se ha logeado exitosamente ,al tener acceso a su informacion de perfil
     podemos deducir que es el generp ${generoUsuario} y que estatus de relacion es : ${estatusRelacioneSentimental} y se ultima publicacion
     se ha realizado el ${fecha_ultimoPost}`);
+
+// NULL vs UNDEFINED
+
+console.log("Comparacion de la Identidad ente Undefined y Null:")
+console.log(
+    (fecha_ultimoPost==estatusRelacioneSentimental)?
+    "Ambas variables tienen el mismo valor y el mismo tipo de dato":
+    "Las variables no tienen el mismo valor"
+);
+console.log("Comparacion de la Identidad ente Undefined y Null:")
+console.log(
+    (fecha_ultimoPost===estatusRelacioneSentimental)?
+    "Ambas variables tienen el mismo valor y el mismo tipo de dato":
+    "Las variables no tienen el mismo valor"
+);
+
+//8. FUNCTION (Funciones)
+console.warn("--- Tipo de Dato FUNCTION (Funcion)")
+const saludar = function(nombre){return `Hola,${nombre}!`}
+
+//Invocamos a la funciondeclarada
+console.log(saludar(`Paco`))
+
+//Y que tipo de dato tiene la constante
+console.log(`El tipo de dato de la constante saludar es: ${typeof(saludar)}`)
