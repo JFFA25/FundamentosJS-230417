@@ -199,4 +199,4 @@ const saludar = function(nombre){return `Hola,${nombre}!`}
 console.log(saludar(`Paco`))
 
 //Y que tipo de dato tiene la constante
-console.log(`El tipo de dato de la constante saludar es: ${typeof(saludar)}`)
+console.log(`El Tipo de dato de la constante saludar e: ${typeof(saludar)}`)
