@@ -9,10 +9,13 @@ básicos de logica de programación.
 
 ## Historial de Practicas
 
-|No.|Descripción|Estatus|
-|--|--|--|
-|1.|Metodologia de Evaluacion|Activa|
-|2.|Inicialización del Proyecto de Fundamentos de JS|Activa|
+|No.|Descripción|Potenciadores|Estatus|
+|--|--|--|--|
+|1.|Metodologia de Evaluacion|1|Finalizada|
+|2.|Inicialización del Proyecto de Fundamentos de JS|5|Activa|
+|3.|Declaración de Variables(Undefined/Boolean/Number)|10|Activa|
+|4.|Introduccion a Objetos(String/BigInt/Symbol/Null/Function)||Por definir|
+|5.|Introducción a Objetos|Activa||
 
 
 ## Autor
