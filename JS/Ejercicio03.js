@@ -161,4 +161,90 @@ console.log(`Por cuestiones de inflación el costo del producto ha cambiado y de
 //Para modificar el valor de un objeto basta con igualar el nuevo valor de la propiedad
 Producto2.Precio=6915.50;
 console.log(`Los nuevos valores del Producto son:`)
+console.log(Producto2); 
+
+// ¿Puedo cambiar no solo el valor sino el tipo de dato de un objeto en JS?
+
+console.log(`-----------------------------------------------------------------------------------`)
+console.log(`El objeto actualmente tiene los siguientes valores`)
+var tipoDisponibilidad= typeof(Producto2.Disponibilidad)
+console.log(`El tipo de dato de la disponibilidad es: ${tipoDisponibilidad}`)
+console.log(JSON.stringify(Producto2,null,2)); //Disponibilidad Boolean
+Producto2.Disponibilidad="Sí";
+let nuevoTipoDisponible= typeof(Producto2.Disponibilidad)
 console.log(Producto2);
+console.log(`El tipo de dato de la disponibilidad es: ${nuevoTipoDisponible}`)
+//Si
+//
+
+//Agregacion de propiedades a un objeto existente
+console.log("%c5-- Agregacion de propeidades de un objeto",style_console);
+//console.log("%c5.- Agregar nuevas propiedades al Objeto", style_console);
+console.log("Objeto antes de ser modificado: ");
+console.log(JSON.stringify(Comprador));
+
+//Agregando propiedades
+console.log("Los datos actuales del comprador son: ")
+console.table(Comprador)
+Comprador[`Dirección`]="Av. Benito Juárez No. 1525, Interior 40, Xicotepec de JUárez, Puebla, México"
+Comprador[`Tipo`]="Nuevo Cliente"
+Comprador[`ActividadReciente`]= true
+Comprador[`TotalCompras`]=3516.25
+console.log("Despues de haber agregado las propiedades; Dirección, Tipo, ActividadReciente y TotalCompras... ")
+console.table(Comprador)
+
+//Eliminar Propiedades de un objeto existente
+console.log("%c6.- Eliminar propiedades existentes de un Objeto", style_console);
+console.log("La estructura y valores del objeto PEDIDO son previos a la modificación:")
+console.table(Pedido)
+delete Pedido.TipoPago
+console.log("Despues de la modificación...")
+console.table(Pedido)
+
+
+console.log("%c7.- Metodos para controlar la mutabilidad de los Objetos,Congelacion(FREZE)", style_console);
+//Si deseamos no permitir que los objetos sean modificados ni su estructura, ni el valor , utilizaremos el metodo FREZE(Congelar)
+console.log(`La estructura actual del Objeto COMPRADOR es : `)
+console.table(Comprador)
+Object.freeze(Comprador);
+//Internamos agregar , eliminar , modificar los valores de sus propiedades
+Comprador.FechaUltimaCompra="05/09/2024"
+delete Comprador.Tipo;
+Comprador.Dirección="Calle Misericorida Interior #112"
+console.log(`Verificamos que si se realizaron los cambios en el objeto COMPRADOR es : `)
+console.table(Comprador)
+
+
+
+console.log("%c8.- Metodos para controlar la mutabilidad de objetos sellado (SEAL)", style_console);
+//Sin embargo , en el caso que debemos poder modificar los valores de las propiedades del Objeto , pero no su estructura , usaremos SEAL
+Object.seal(Pedido)
+//Intentamos modificar su estructura
+Pedido[`FechaPedido`]="24/09/2024";
+delete Pedido[`Cantidad`]
+console.log(`Verificamos que si se realizaron los cambios en el Objeto PEDIDO:`)
+console.table(Pedido)
+Pedido.Cantidad=5
+console.log(`Verificamos si se realizaron los cambios en el Objeto PEDIDO:`)
+console.table(Pedido)
+
+console.log("%c9.- Destruccion de 2 o mas Objetos", style_console);
+
+const{Precio:productoPrecio,SKU:productoSKU,Marca:productoMarca} = Producto
+const{Correo:clienteCorreo,PaisOrigen:clientePais,SaldoActual:clienteSaldo} = Comprador
+
+//Transformar valores cuantitativos en caulitativos
+
+if(productoPrecio>200)
+    precioProducto="Caro"
+else
+productoPrecio="Barato"
+
+//Clasificamos al cliente por su pais de origen
+if(PaisOrigen=="Mexico")
+    PaisOrigen="Nacional"
+else
+PaisOrigen="Extranjero"
+//Transformar valores cualitativos
+
+console.log("%c10.- Metodos para controlar la mutabilidad de los Objetos sellado(SEAL)", style_console);
