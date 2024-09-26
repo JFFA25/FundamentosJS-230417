@@ -69,6 +69,7 @@ console.log("%c2.- Objeto", style_console);
 
 let Producto = 
 {
+    ID : 230417,
     Nombre : "Tenis", 
     Marca: "Pumba",
     Modelo: "Pumbachus'01", 
@@ -128,6 +129,7 @@ let Comprador =
 }
 
 let Pedido= {
+    ID: 230418,
     Producto_Clave: 316, 
     Comprador_Clave: 3216,
     Cantidad: 2, 
@@ -228,23 +230,68 @@ Pedido.Cantidad=5
 console.log(`Verificamos si se realizaron los cambios en el Objeto PEDIDO:`)
 console.table(Pedido)
 
-console.log("%c9.- Destruccion de 2 o mas Objetos", style_console);
+console.log("%c9.-Destructuracion de  2 objetos", style_console);
 
-const{Precio:productoPrecio,SKU:productoSKU,Marca:productoMarca} = Producto
-const{Correo:clienteCorreo,PaisOrigen:clientePais,SaldoActual:clienteSaldo} = Comprador
+const {} = Producto;
+let{Correo: clienteCorreo, PaisOrigen: clientePais, SaldoActual: clienteSaldo, Tipo: clienteTipo} = Comprador
+let{Precio: ProductoPrecio, SKU: ProductoSKU, Marca: ProductoMarca}= Producto
 
-//Transformar valores cuantitativos en caulitativos
 
-if(productoPrecio>200)
-    precioProducto="Caro"
+if (ProductoPrecio> 2000)
+    ProductoPrecio="Caro"  
 else
-productoPrecio="Barato"
+    ProductoPrecio = "Barato"
 
-//Clasificamos al cliente por su pais de origen
-if(PaisOrigen=="Mexico")
-    PaisOrigen="Nacional"
+
+if (clienteSaldo>0)
+    clienteSaldo = "A favor"
+else if (clienteSaldo < 0)
+    clienteSaldo = "En contra"
 else
-PaisOrigen="Extranjero"
-//Transformar valores cualitativos
+    clienteSaldo = "Sin deuda"
 
-console.log("%c10.- Metodos para controlar la mutabilidad de los Objetos sellado(SEAL)", style_console);
+let clienteNivel;
+
+    if(clienteTipo =="Premium")
+        clienteNivel=1;
+    if(clienteTipo == "Fremium")
+        clienteNivel =2 ;
+    if(clienteNivel=="No identificado")
+        clienteNivel =3;
+
+if(clientePais == "Mexico")
+    clientePais = "Nacional"
+else
+    clientePais="Extrangero"
+
+
+let datosClientesPromociones={clienteCorreo,clientePais,clienteNivel,clienteSaldo,ProductoMarca,ProductoPrecio}
+
+console.log("Los datos del cliente y sus habitos de compra son: ")
+console.table(datosClientesPromociones)
+//Operaciones sobre Objetos 
+
+console.log("%c10- Metodo para controlar la mutabilidad de los objetos Sellado (SEAL))", style_console);
+
+console.log("Impeimimos la estructura y valores en Objetos PRODUCTO")
+ console.table(Producto);
+
+console.log("Imprimimos la estructura y valores de Objetos PEDIDO")
+ console.table(Pedido);
+
+console.log("%c10- Union de Objetos usando el SPEAD OPERATOR (ASAY))", style_console);
+
+console.table(Producto);
+console.table(Comprador);
+console.table(Pedido);
+
+let Venta2 = { 
+    producto : {... Producto },
+    comprador: {... Comprador},
+    pedido : {... Pedido}
+
+}
+    console.log("Fusionamps los 3 Objetos en uno nuevo sin perdida de informacion")
+    console.log(Venta2)
+    console.table(Venta2)
+
